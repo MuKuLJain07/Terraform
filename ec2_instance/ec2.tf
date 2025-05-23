@@ -63,6 +63,7 @@ resource "aws_security_group" "my_security_group" {
  
 # ec2 instance
 resource "aws_instance" "test-instance-from-tf" {
+    count         = 1
     ami           = var.ubuntu-ami
     instance_type = var.ec2_instance_type
     key_name      = "id_rsa"                                          # reference the key already in AWS
